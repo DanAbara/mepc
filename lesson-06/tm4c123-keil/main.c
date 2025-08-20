@@ -1,8 +1,8 @@
 #include "tm4c.h"
 
-#define LED_RED   (1U << 1)
-#define LED_BLUE  (1U << 2)
-#define LED_GREEN (1U << 3)
+#define LED_RED 	(1U << 1) // 00000010
+#define LED_BLUE 	(1U << 2) // 00000100
+#define LED_GREEN (1U << 3) // 00001000
 
 int main(void) {
 
@@ -29,22 +29,31 @@ int main(void) {
 */
 
     SYSCTL_RCGCGPIO_R |= (1U << 5);  // enable clock for GPIOF
-    GPIO_PORTF_DIR_R |= (LED_RED | LED_BLUE | LED_GREEN);
-    GPIO_PORTF_DEN_R |= (LED_RED | LED_BLUE | LED_GREEN);
+    GPIO_PORTF_DIR_R |= (LED_RED | LED_BLUE | LED_GREEN); // set pins 1, 2, and 3 as outputs
+    GPIO_PORTF_DEN_R |= (LED_RED | LED_BLUE | LED_GREEN); // enable digital function on pins 1,2,3
 
-    // start with turning all LEDs off
-    GPIO_PORTF_DATA_R &= ~(LED_RED | LED_BLUE | LED_GREEN);
-
-    GPIO_PORTF_DATA_R |= LED_BLUE;
+		GPIO_PORTF_DATA_R = LED_BLUE; // turn the blue LED on
     while (1) {
-        GPIO_PORTF_DATA_R |= LED_RED; // turn the red LED on
+			/* turn the red LED on while keeping blue on
+				GPIO_PORTF_DATA_R = 00000100 - blue on
+				LED_RED						=	00000010 - red on
+											---------------
+				BITWISE OR RESULT = 00000110 - both blue and red on
+			*/
+        GPIO_PORTF_DATA_R |= LED_RED; // turn the red LED on while keeping blue on
 
         int volatile counter = 0;
         while (counter < 1000000) {  // delay loop
             ++counter;
         }
 
-        GPIO_PORTF_DATA_R &= ~LED_RED; // turn the red LED off
+			/* turn the red LED off while keeping blue on
+				GPIO_PORTF_DATA_R 	= 00000110 - blue and red on
+				~LED_RED						=	00000000 - complement of red
+												--------------
+				BITWISE AND RESULT 	= 00000100 - both blue and red on
+			*/
+        GPIO_PORTF_DATA_R &= ~LED_RED; // turn the red LED off while keeping blue on
         counter = 0;
         while (counter < 1000000) {  // delay loop
             ++counter;

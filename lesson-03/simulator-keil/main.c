@@ -8,7 +8,7 @@ int main(void) {
     }
 
     p_int = (int *)0x20000002U;
-    *p_int = (int)0xDEADBEEF;
+    *p_int = (int) 0xDEADBEEF;
 
     return 0;
 }
