@@ -35,30 +35,28 @@ int main(void) {
 		GPIO_PORTF_DATA_R = LED_BLUE; // turn the blue LED on
 		while (1) {
 			/* turn the red LED on while keeping blue on
-				GPIO_PORTF_DATA_R = 00000100 - blue on
-				LED_RED						=	00000010 - red on
-											---------------
-				BITWISE OR RESULT = 00000110 - both blue and red on
+			GPIO_PORTF_DATA_R	= 00000100 - blue on
+			LED_RED						=	00000010 - red on
+													---------------
+			BITWISE OR RESULT = 00000110 - both blue and red on
 			*/
-        GPIO_PORTF_DATA_R |= LED_RED; // turn the red LED on while keeping blue on
-
-        int volatile counter = 0;
-        while (counter < 1000000) {  // delay loop
-            ++counter;
-        }
+			GPIO_PORTF_DATA_R |= LED_RED; // turn the red LED on while keeping blue on
+			int volatile counter = 0;
+			while (counter < 1000000) {  // delay loop
+				++counter;
+			}
 
 			/* turn the red LED off while keeping blue on
-				GPIO_PORTF_DATA_R 	= 00000110 - blue and red on
-				~LED_RED						=	00000000 - complement of red
-												--------------
-				BITWISE AND RESULT 	= 00000100 - both blue and red on
+			GPIO_PORTF_DATA_R 	= 00000110 - blue and red on
+			~LED_RED						=	00000000 - complement of red
+													--------------
+			BITWISE AND RESULT 	= 00000100 - both blue and red on
 			*/
-        GPIO_PORTF_DATA_R &= ~LED_RED; // turn the red LED off while keeping blue on
-        counter = 0;
-        while (counter < 1000000) {  // delay loop
-            ++counter;
-        }
-
+			GPIO_PORTF_DATA_R &= ~LED_RED; // turn the red LED off while keeping blue on
+			counter = 0;
+			while (counter < 1000000) {  // delay loop
+				++counter;
+			}
     }
     //return 0; // unreachable code
 }
