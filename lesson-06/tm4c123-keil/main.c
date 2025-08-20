@@ -31,9 +31,9 @@ int main(void) {
     SYSCTL_RCGCGPIO_R |= (1U << 5);  // enable clock for GPIOF
     GPIO_PORTF_DIR_R |= (LED_RED | LED_BLUE | LED_GREEN); // set pins 1, 2, and 3 as outputs
     GPIO_PORTF_DEN_R |= (LED_RED | LED_BLUE | LED_GREEN); // enable digital function on pins 1,2,3
-
+		
 		GPIO_PORTF_DATA_R = LED_BLUE; // turn the blue LED on
-    while (1) {
+		while (1) {
 			/* turn the red LED on while keeping blue on
 				GPIO_PORTF_DATA_R = 00000100 - blue on
 				LED_RED						=	00000010 - red on
