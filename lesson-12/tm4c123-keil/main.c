@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 #include <stdint.h>
 #include "tm4c.h"
+=======
+#include "TM4C123GH6PM.h"  // CMSIS-compatible interface
+>>>>>>> b99e29d97ea028ae0e69173b74ac5132c41c0e99
 #include "delay.h"
 
 #define LED_RED 	(1U << 1) // 00000010
@@ -15,6 +19,7 @@ int16_t s16;
 int32_t s32;
 
 int main(void) {
+<<<<<<< HEAD
 	
 	u8a 	= sizeof(u8a);
 	u16c 	= sizeof(uint16_t);
@@ -57,3 +62,61 @@ int main(void) {
 	}
 	//return 0; // unreachable code
 }
+=======
+    Point *pp;
+    Window *wp;
+
+    p1.x = sizeof(Point);
+    p1.y = 0xAAU;
+
+    w.top_left.x = 1U;
+    w.bottom_right.y = 2U;
+
+    t.corners[0].x = 1U;
+    t.corners[2].y = 2U;
+
+    p2 = p1;
+    w2 = w;
+
+    pp = &p1;
+    wp = &w2;
+
+    (*pp).x = 1U;
+
+    (*wp).top_left = *pp;
+
+    pp->x = 1U;
+    wp->top_left = *pp;
+
+    SYSCTL->RCGCGPIO  |= (1U << 5); /* enable AHB for GPIOF */
+    SYSCTL->GPIOHBCTL |= (1U << 5); /* enable clock for GPIOF */
+
+    /* configure LEDs (digital output) */
+    GPIOF_AHB->DIR |= (LED_RED | LED_BLUE | LED_GREEN);
+    GPIOF_AHB->DEN |= (LED_RED | LED_BLUE | LED_GREEN);
+
+    /* turn all LEDs off */
+    GPIOF_AHB->DATA_Bits[LED_RED | LED_BLUE | LED_GREEN] = 0U;
+
+    GPIOF_AHB->DATA_Bits[LED_BLUE] = LED_BLUE;
+    while (1) {
+        GPIOF_AHB->DATA_Bits[LED_RED] = LED_RED;
+        delay(500000);
+
+        GPIOF_AHB->DATA_Bits[LED_RED] = 0;
+
+        delay(250000);
+    }
+    //return 0; // unreachable code
+}
+
+//............................................................................
+// function needed by the library/startup code
+_Noreturn void assert_failed(char const * const module, int const id);
+_Noreturn void assert_failed(char const * const module, int const id) {
+    // TBD: damage control
+    (void)module; // avoid the "unused parameter" compiler warning
+    (void)id;     // avoid the "unused parameter" compiler warning
+    NVIC_SystemReset();
+}
+>>>>>>> b99e29d97ea028ae0e69173b74ac5132c41c0e99

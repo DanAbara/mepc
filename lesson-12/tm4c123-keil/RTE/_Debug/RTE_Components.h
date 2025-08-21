@@ -13,7 +13,7 @@
 /*
  * Define the Device Header File: 
  */
-#define CMSIS_device_header "TM4C123.h"
+#define CMSIS_device_header "ARMCM0.h"
 
 
 
