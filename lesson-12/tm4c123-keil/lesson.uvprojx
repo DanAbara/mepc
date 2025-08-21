@@ -399,6 +399,11 @@
               <FileType>5</FileType>
               <FilePath>.\tm4c_cmsis.h</FilePath>
             </File>
+            <File>
+              <FileName>tm4c.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\tm4c.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
