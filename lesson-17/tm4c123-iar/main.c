@@ -16,9 +16,9 @@ int main() {
     SysTick->VAL  = 0U;
     SysTick->CTRL = (1U << 2) | (1U << 1) | 1U;
 
-    SysTick_Handler();
+    SysTick_Handler(); // interrupt handler called like regular function wit BL instructions
 
-    __enable_interrupt();
+    __enable_interrupt(); // interrupt handler called via different process of preemption
     while (1) {
         GPIOF_AHB->DATA_Bits[LED_GREEN] = LED_GREEN;
         GPIOF_AHB->DATA_Bits[LED_GREEN] = 0U;

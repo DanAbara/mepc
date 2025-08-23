@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-    <fileVersion>3</fileVersion>
+    <fileVersion>4</fileVersion>
     <configuration>
         <name>Debug</name>
         <toolchain>
@@ -11,7 +11,7 @@
             <name>General</name>
             <archiveVersion>3</archiveVersion>
             <data>
-                <version>35</version>
+                <version>37</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -70,7 +70,7 @@
                 </option>
                 <option>
                     <name>OGLastSavedByProductVersion</name>
-                    <state>9.32.1.54977</state>
+                    <state>9.70.1.13552</state>
                 </option>
                 <option>
                     <name>OGChipSelectEditMenu</name>
@@ -98,7 +98,7 @@
                 </option>
                 <option>
                     <name>GBECoreSlave</name>
-                    <version>32</version>
+                    <version>35</version>
                     <state>39</state>
                 </option>
                 <option>
@@ -115,7 +115,7 @@
                 </option>
                 <option>
                     <name>CoreVariant</name>
-                    <version>32</version>
+                    <version>35</version>
                     <state>39</state>
                 </option>
                 <option>
@@ -138,7 +138,7 @@
                 </option>
                 <option>
                     <name>GFPUCoreSlave2</name>
-                    <version>32</version>
+                    <version>35</version>
                     <state>39</state>
                 </option>
                 <option>
@@ -211,13 +211,22 @@
                     <name>FPU64</name>
                     <state>1</state>
                 </option>
+                <option>
+                    <name>OG_32_64DeviceCoreSlave</name>
+                    <version>35</version>
+                    <state>39</state>
+                </option>
+                <option>
+                    <name>GOutputSo</name>
+                    <state>0</state>
+                </option>
             </data>
         </settings>
         <settings>
             <name>ICCARM</name>
             <archiveVersion>2</archiveVersion>
             <data>
-                <version>37</version>
+                <version>40</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -459,13 +468,37 @@
                     <name>CCStackProtection</name>
                     <state>0</state>
                 </option>
+                <option>
+                    <name>CCPointerAutentiction</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>CCBranchTargetIdentification</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>CCPosRadRwpi</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>CCPosSharedSlave</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>CCUseIarExtensions</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>CCUseGnuExtensions</name>
+                    <state>0</state>
+                </option>
             </data>
         </settings>
         <settings>
             <name>AARM</name>
             <archiveVersion>2</archiveVersion>
             <data>
-                <version>11</version>
+                <version>12</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -625,6 +658,10 @@
                     <name>PreInclude</name>
                     <state></state>
                 </option>
+                <option>
+                    <name>A_32_64Device</name>
+                    <state>1</state>
+                </option>
             </data>
         </settings>
         <settings>
@@ -659,27 +696,18 @@
         </settings>
         <settings>
             <name>CUSTOM</name>
-            <archiveVersion>3</archiveVersion>
+            <archiveVersion>4</archiveVersion>
             <data>
                 <extensions></extensions>
                 <cmdline></cmdline>
-                <hasPrio>0</hasPrio>
                 <buildSequence>inputOutputBased</buildSequence>
-            </data>
-        </settings>
-        <settings>
-            <name>BUILDACTION</name>
-            <archiveVersion>1</archiveVersion>
-            <data>
-                <prebuild></prebuild>
-                <postbuild></postbuild>
             </data>
         </settings>
         <settings>
             <name>ILINK</name>
             <archiveVersion>0</archiveVersion>
             <data>
-                <version>27</version>
+                <version>28</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -728,7 +756,7 @@
                 </option>
                 <option>
                     <name>IlinkMapFile</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>IlinkLogFile</name>
@@ -752,11 +780,11 @@
                 </option>
                 <option>
                     <name>IlinkIcfOverride</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>IlinkIcfFile</name>
-                    <state>$TOOLKIT_DIR$\config\linker\TexasInstruments\TM4C123GH6.icf</state>
+                    <state>C:\Users\dabar\Documents\modern-embedded-programming-course\lesson-13\tm4c123-iar\settings\project.icf</state>
                 </option>
                 <option>
                     <name>IlinkIcfFileSlave</name>
@@ -989,7 +1017,7 @@
                 </option>
                 <option>
                     <name>IlinkTrustzoneImportLibraryOut</name>
-                    <state>###Unitialized###</state>
+                    <state>project_import_lib.o</state>
                 </option>
                 <option>
                     <name>OILinkExtraOption</name>
@@ -1047,13 +1075,17 @@
                     <name>IlinkFpuProcessor</name>
                     <state>1</state>
                 </option>
+                <option>
+                    <name>IlinkSharedSlave</name>
+                    <state>0</state>
+                </option>
             </data>
         </settings>
         <settings>
             <name>IARCHIVE</name>
             <archiveVersion>0</archiveVersion>
             <data>
-                <version>0</version>
+                <version>1</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -1068,7 +1100,20 @@
                     <name>IarchiveOutput</name>
                     <state>###Unitialized###</state>
                 </option>
+                <option>
+                    <name>IarchiveExtraOptionsCheck</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IarchiveExtraOptions</name>
+                    <state></state>
+                </option>
             </data>
+        </settings>
+        <settings>
+            <name>BUILDACTION</name>
+            <archiveVersion>2</archiveVersion>
+            <data />
         </settings>
         <settings>
             <name>Coder</name>
@@ -1088,4 +1133,9 @@
     <file>
         <name>$PROJ_DIR$\tm4c.h</name>
     </file>
+    <projectSettings>
+        <general>
+            <resolveSourceForBinaries>true</resolveSourceForBinaries>
+        </general>
+    </projectSettings>
 </project>

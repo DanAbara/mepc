@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-    <fileVersion>3</fileVersion>
+    <fileVersion>4</fileVersion>
     <configuration>
         <name>Debug</name>
         <toolchain>
@@ -11,24 +11,24 @@
             <name>General</name>
             <archiveVersion>3</archiveVersion>
             <data>
-                <version>35</version>
+                <version>37</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
                     <name>BrowseInfoPath</name>
-                    <state>Debug\BrowseInfo</state>
+                    <state>dbg</state>
                 </option>
                 <option>
                     <name>ExePath</name>
-                    <state>Debug\Exe</state>
+                    <state>dbg</state>
                 </option>
                 <option>
                     <name>ObjPath</name>
-                    <state>Debug\Obj</state>
+                    <state>dbg</state>
                 </option>
                 <option>
                     <name>ListPath</name>
-                    <state>Debug\List</state>
+                    <state>dbg</state>
                 </option>
                 <option>
                     <name>GEndianMode</name>
@@ -36,11 +36,11 @@
                 </option>
                 <option>
                     <name>Input description</name>
-                    <state>Full formatting.</state>
+                    <state>Full formatting, without multibyte support.</state>
                 </option>
                 <option>
                     <name>Output description</name>
-                    <state>Full formatting.</state>
+                    <state>Full formatting, without multibyte support.</state>
                 </option>
                 <option>
                     <name>GOutputBinary</name>
@@ -62,7 +62,7 @@
                 </option>
                 <option>
                     <name>RTDescription</name>
-                    <state>Use the normal configuration of the C/C++ runtime library. No locale interface, C locale, no file descriptor support, no multibytes in printf and scanf, and no hex floats in strtod.</state>
+                    <state>A compact configuration of the C/C++14 runtime library. No locale interface, C locale, no file descriptor support, no multibytes in printf and scanf, and no hex floats in strtod.</state>
                 </option>
                 <option>
                     <name>OGProductVersion</name>
@@ -70,7 +70,7 @@
                 </option>
                 <option>
                     <name>OGLastSavedByProductVersion</name>
-                    <state>9.32.1.54977</state>
+                    <state>9.70.1.13552</state>
                 </option>
                 <option>
                     <name>OGChipSelectEditMenu</name>
@@ -98,16 +98,16 @@
                 </option>
                 <option>
                     <name>GBECoreSlave</name>
-                    <version>32</version>
+                    <version>35</version>
                     <state>39</state>
                 </option>
                 <option>
                     <name>OGUseCmsis</name>
-                    <state>1</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>OGUseCmsisDspLib</name>
-                    <state>1</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>GRuntimeLibThreads</name>
@@ -115,7 +115,7 @@
                 </option>
                 <option>
                     <name>CoreVariant</name>
-                    <version>32</version>
+                    <version>35</version>
                     <state>39</state>
                 </option>
                 <option>
@@ -138,7 +138,7 @@
                 </option>
                 <option>
                     <name>GFPUCoreSlave2</name>
-                    <version>32</version>
+                    <version>35</version>
                     <state>39</state>
                 </option>
                 <option>
@@ -201,7 +201,7 @@
                 </option>
                 <option>
                     <name>BuildFilesPath</name>
-                    <state>Debug</state>
+                    <state>dbg</state>
                 </option>
                 <option>
                     <name>PointerAuthentication</name>
@@ -211,13 +211,22 @@
                     <name>FPU64</name>
                     <state>1</state>
                 </option>
+                <option>
+                    <name>OG_32_64DeviceCoreSlave</name>
+                    <version>35</version>
+                    <state>39</state>
+                </option>
+                <option>
+                    <name>GOutputSo</name>
+                    <state>0</state>
+                </option>
             </data>
         </settings>
         <settings>
             <name>ICCARM</name>
             <archiveVersion>2</archiveVersion>
             <data>
-                <version>37</version>
+                <version>40</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -287,7 +296,7 @@
                 <option>
                     <name>CCAllowList</name>
                     <version>1</version>
-                    <state>00000000</state>
+                    <state>10010100</state>
                 </option>
                 <option>
                     <name>CCDebugInfo</name>
@@ -319,7 +328,7 @@
                 </option>
                 <option>
                     <name>CCRequirePrototypes</name>
-                    <state>1</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>CCDiagWarnAreErr</name>
@@ -347,7 +356,7 @@
                 </option>
                 <option>
                     <name>CCIncludePath2</name>
-                    <state></state>
+                    <state>$PROJ_DIR$\..\CMSIS\Include</state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>
@@ -363,7 +372,7 @@
                 </option>
                 <option>
                     <name>CCOptLevel</name>
-                    <state>1</state>
+                    <state>2</state>
                 </option>
                 <option>
                     <name>CCOptStrategy</name>
@@ -372,7 +381,7 @@
                 </option>
                 <option>
                     <name>CCOptLevelSlave</name>
-                    <state>1</state>
+                    <state>2</state>
                 </option>
                 <option>
                     <name>CCPosIndRopi</name>
@@ -459,13 +468,37 @@
                     <name>CCStackProtection</name>
                     <state>0</state>
                 </option>
+                <option>
+                    <name>CCPointerAutentiction</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>CCBranchTargetIdentification</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>CCPosRadRwpi</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>CCPosSharedSlave</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>CCUseIarExtensions</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>CCUseGnuExtensions</name>
+                    <state>0</state>
+                </option>
             </data>
         </settings>
         <settings>
             <name>AARM</name>
             <archiveVersion>2</archiveVersion>
             <data>
-                <version>11</version>
+                <version>12</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -625,6 +658,10 @@
                     <name>PreInclude</name>
                     <state></state>
                 </option>
+                <option>
+                    <name>A_32_64Device</name>
+                    <state>1</state>
+                </option>
             </data>
         </settings>
         <settings>
@@ -659,27 +696,18 @@
         </settings>
         <settings>
             <name>CUSTOM</name>
-            <archiveVersion>3</archiveVersion>
+            <archiveVersion>4</archiveVersion>
             <data>
                 <extensions></extensions>
                 <cmdline></cmdline>
-                <hasPrio>0</hasPrio>
                 <buildSequence>inputOutputBased</buildSequence>
-            </data>
-        </settings>
-        <settings>
-            <name>BUILDACTION</name>
-            <archiveVersion>1</archiveVersion>
-            <data>
-                <prebuild></prebuild>
-                <postbuild></postbuild>
             </data>
         </settings>
         <settings>
             <name>ILINK</name>
             <archiveVersion>0</archiveVersion>
             <data>
-                <version>27</version>
+                <version>28</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -752,11 +780,11 @@
                 </option>
                 <option>
                     <name>IlinkIcfOverride</name>
-                    <state>1</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>IlinkIcfFile</name>
-                    <state>$PROJ_DIR$\project.icf</state>
+                    <state>$TOOLKIT_DIR$/config/linker/TexasInstruments/TM4C123GH6.icf</state>
                 </option>
                 <option>
                     <name>IlinkIcfFileSlave</name>
@@ -1047,13 +1075,17 @@
                     <name>IlinkFpuProcessor</name>
                     <state>1</state>
                 </option>
+                <option>
+                    <name>IlinkSharedSlave</name>
+                    <state>0</state>
+                </option>
             </data>
         </settings>
         <settings>
             <name>IARCHIVE</name>
             <archiveVersion>0</archiveVersion>
             <data>
-                <version>0</version>
+                <version>1</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -1068,7 +1100,20 @@
                     <name>IarchiveOutput</name>
                     <state>###Unitialized###</state>
                 </option>
+                <option>
+                    <name>IarchiveExtraOptionsCheck</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IarchiveExtraOptions</name>
+                    <state></state>
+                </option>
             </data>
+        </settings>
+        <settings>
+            <name>BUILDACTION</name>
+            <archiveVersion>2</archiveVersion>
+            <data />
         </settings>
         <settings>
             <name>Coder</name>
@@ -1080,12 +1125,26 @@
         <name>$PROJ_DIR$\bsp.c</name>
     </file>
     <file>
+        <name>$PROJ_DIR$\bsp.h</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\core_cm4.h</name>
+    </file>
+    <file>
         <name>$PROJ_DIR$\main.c</name>
     </file>
     <file>
         <name>$PROJ_DIR$\startup_tm4c.c</name>
     </file>
     <file>
-        <name>$PROJ_DIR$\TM4C123GH6PM.h</name>
+        <name>$PROJ_DIR$\..\ek-tm4c123gxl\TM4C123GH6PM.h</name>
     </file>
+    <file>
+        <name>$PROJ_DIR$\tm4c_cmsis.h</name>
+    </file>
+    <projectSettings>
+        <general>
+            <resolveSourceForBinaries>true</resolveSourceForBinaries>
+        </general>
+    </projectSettings>
 </project>
