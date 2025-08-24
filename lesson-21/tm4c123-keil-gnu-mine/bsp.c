@@ -11,6 +11,7 @@
 static uint32_t volatile l_tickCtr;
 
 void BSP_init(void) {
+	
 	/* board specific settings moved from background - main() */
 	SYSCTL->GPIOHBCTL |= (1U << 5); /* enable AHB for GPIOF */
   SYSCTL->RCGCGPIO  |= (1U << 5); /* enable Run mode for GPIOF */

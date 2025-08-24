@@ -19,6 +19,7 @@ int main() {
 
 /* background code - non-blocking version */
 int main() {
+	
 	BSP_init();
 	while (1) {
 		/* Blinky polling state machine */
