@@ -29,7 +29,7 @@ SECTIONS {
 
     .isr_vector : {        /* the vector table goes FIRST into ROM */
         KEEP(*(.isr_vector)) /* vector table */
-        . = ALIGN(4);
+        . = ALIGN(4);		/* Section size is aligned to 4-byte boundary */
     } >ROM
 
     .text : {              /* code and constants */
@@ -74,7 +74,7 @@ SECTIONS {
         __stack_end__ = .;
     } >RAM
 
-    .data :  AT (_etext) {
+    .data :  AT (_etext) {	/* used for initialized data */
         __data_load = LOADADDR (.data);
         __data_start = .;
         *(.data)           /* .data sections */
@@ -84,7 +84,7 @@ SECTIONS {
         _edata = __data_end__;
     } >RAM
 
-    .bss : {
+    .bss : {				/* used for uninitialized data */
         __bss_start__ = .;
         *(.bss)
         *(.bss*)
@@ -94,7 +94,7 @@ SECTIONS {
         __bss_end__ = .;
     } >RAM
 
-    __exidx_start = .;
+    __exidx_start = .;		/* exidx is for C++ exception handling */
     .ARM.exidx   : { *(.ARM.exidx* .gnu.linkonce.armexidx.*) } >RAM
     __exidx_end = .;
 
