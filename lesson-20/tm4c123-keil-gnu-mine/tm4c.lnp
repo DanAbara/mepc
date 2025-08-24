@@ -1,0 +1,1 @@
+-T ./lesson.ld -mcpu=cortex-m4 -mthumb -mthumb-interwork -Wl,-Map="./tm4c.map" -o "./tm4c.elf" "./main.o" "./bsp.o" "./startup_tm4c.o" "./system_tm4c123.o" -nostartfiles -lm
