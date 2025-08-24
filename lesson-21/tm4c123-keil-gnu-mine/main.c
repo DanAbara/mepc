@@ -4,22 +4,19 @@
 #if 0
 /* background code - blocking version */
 int main() {
-    
-		BSP_init();
-	
-    while (1) {
-        BSP_ledGreenOn();
-				BSP_delay(BSP_TICKS_PER_SEC / 4U);
-        BSP_ledGreenOff();
-				BSP_delay(BSP_TICKS_PER_SEC * 3U / 4U);
-    }
-    //return 0;
+	BSP_init();
+	while (1) {
+		BSP_ledGreenOn();
+		BSP_delay(BSP_TICKS_PER_SEC / 4U);
+		BSP_ledGreenOff();
+		BSP_delay(BSP_TICKS_PER_SEC * 3U / 4U);
+	}
+	//return 0;
 }
 #endif
 
 /* background code - non-blocking version */
 int main() {
-	
 	BSP_init();
 	while (1) {
 		/* Blinky polling state machine */
