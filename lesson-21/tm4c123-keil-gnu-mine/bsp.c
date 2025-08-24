@@ -13,12 +13,11 @@ static uint32_t volatile l_tickCtr;
 void BSP_init(void) {
 	/* board specific settings moved from background - main() */
 	SYSCTL->GPIOHBCTL |= (1U << 5); /* enable AHB for GPIOF */
-  SYSCTL->RCGCGPIO  |= (1U << 5); /* enable Run mode for GPIOF */
-  GPIOF_AHB->DIR |= (LED_RED | LED_BLUE | LED_GREEN); /* set pins 1,2,3 as output pins */
-  GPIOF_AHB->DEN |= (LED_RED | LED_BLUE | LED_GREEN); /* enable digital functions for pins 1,2,3 */
-
+	SYSCTL->RCGCGPIO  |= (1U << 5); /* enable Run mode for GPIOF */
+	GPIOF_AHB->DIR |= (LED_RED | LED_BLUE | LED_GREEN); /* set pins 1,2,3 as output pins */
+	GPIOF_AHB->DEN |= (LED_RED | LED_BLUE | LED_GREEN); /* enable digital functions for pins 1,2,3 */
 	SystemCoreClockUpdate();
-	
+
 	/* Use SysTick_Config() instead of Systick->LOAD/VAL/CTRL etc.*/
 	SysTick_Config(SystemCoreClock / BSP_TICKS_PER_SEC);
 	
